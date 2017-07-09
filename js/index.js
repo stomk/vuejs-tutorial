@@ -35,6 +35,11 @@ var app8 = new Vue({
     url: 'https://vuejs.org',
     visible: true,
   },
+  computed: {
+    reversedMessage: function () {
+      return this.message.split('').reverse().join('');
+    }
+  },
   methods: {
     sayHello: function() {
       console.log("Hello");
