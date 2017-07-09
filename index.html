@@ -7,6 +7,12 @@
     <div id="app">
       <input typ="text" v-model="message">
       <p>{{ message }}</p>
+
+      <ul>
+        <li v-for="person in people">
+          name: {{ person.name }} age: {{ person.age }}
+        </li>
+      </ul>
     </div>
 
     <script src="./js/index.js"></script>
