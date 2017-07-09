@@ -5,8 +5,9 @@
   </head>
   <body>
     <div id="app">
-      <input typ="text" v-model="message">
-      <p>{{ message }}</p>
+      <input v-model="name" placeholder="Name"/>
+      <input v-model="age"  placeholder="Age"/>
+      <button v-on:click="addPerson(name, age)">Add Person</button>
 
       <ul>
         <li v-for="person in people">
