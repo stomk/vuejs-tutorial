@@ -54,3 +54,33 @@ var app8 = new Vue({
     }
   }
 })
+
+var app9= new Vue({
+  el: '#app-9',
+  data: {
+    question: '',
+    answer: 'Answer comes here.'
+  },
+  watch: {
+    question: function (newQuestion) {
+      this.answer = 'Waiting for you to stop typing...';
+      this.getAnswer();
+    }
+  },
+  methods: {
+    getAnswer: _.debounce(
+      function () {
+        this.answer = 'Thinking...';
+        var vm = this;
+        axios.get('https://yesno.wtf/api')
+          .then(function (res) {
+            vm.answer = _.capitalize(res.data.answer)
+          })
+          .catch(function (error) {
+            vm.answer = 'Error! Could not reach the API.' + error
+          })
+      },
+      500
+    )
+  }
+})

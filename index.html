@@ -2,6 +2,8 @@
   <head>
     <title>Vue Tutorial</title>
     <script src="./js/vue.js"></script>
+    <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
   </head>
   <body>
     <div id="app-7">
@@ -31,6 +33,14 @@
 
       <p>{{ message | toUpper | addName('John') }}</p>
       <p>{{ reversedMessage }}</p>
+    </div>
+
+    <div id="app-9">
+      <p>
+        Ask a yes/no question:
+        <input v-model="question">
+      </p>
+      <p>{{ answer }}</p>
     </div>
 
     <script src="./js/index.js"></script>
