@@ -11,5 +11,17 @@ var app7 = new Vue({
       { id: 1, text: 'Cheese' },
       { id: 2, text: 'Chicken' }
     ]
-  }
+  },
+  beforeCreate: function () {
+    console.log('beforeCreate');
+  },
+  created: function () {
+    console.log('created');
+  },
+  mounted: function () {
+    console.log('mounted');
+  },
+  updated: function () {
+    console.log('updated');
+  },
 })
