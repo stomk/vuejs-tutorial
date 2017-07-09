@@ -1,16 +1,15 @@
-new Vue({
-  el: '#app',
+Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>'
+})
+
+var app7 = new Vue({
+  el: '#app-7',
   data: {
-    message: "Hello, Vue.js!",
-    people: [
-      { name: "John", age: 20 },
-      { name: "Bob", age: 25 },
-      { name: "Alice", age: 30 }
-    ],
-  },
-  methods: {
-    addPerson: function (name, age) {
-      this.people = this.people.concat({ name: name, age: age });
-    }
+    groceryList: [
+      { id: 0, text: 'Vegitables' },
+      { id: 1, text: 'Cheese' },
+      { id: 2, text: 'Chicken' }
+    ]
   }
 })
