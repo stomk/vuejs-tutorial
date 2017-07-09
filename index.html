@@ -15,6 +15,23 @@
       </ol>
     </div>
 
+    <div id="app-8">
+      <p v-html="rawHtml"></p>
+      <p v-bind:id="'text-' + id">Hello</p>
+      <a v-bind:href="url">Link</a>
+      <a :href="url">Shorthand</a>
+
+      <br>
+      <button v-on:click="sayHello">click</button>
+      <button @click="sayHello">shorthand></button>
+
+      <p v-if="visible">Visible</p>
+      <p v-if="!visible">Hidden</p>
+      <p v-show="!visible">Invisible</p>
+
+      <p>{{ message | toUpper | addName('John') }}</p>
+    </div>
+
     <script src="./js/index.js"></script>
   </body>
 </html>

@@ -25,3 +25,27 @@ var app7 = new Vue({
     console.log('updated');
   },
 })
+
+var app8 = new Vue({
+  el: '#app-8',
+  data: {
+    message: "hello",
+    rawHtml: '<strong>strong</strong>',
+    id: '1',
+    url: 'https://vuejs.org',
+    visible: true,
+  },
+  methods: {
+    sayHello: function() {
+      console.log("Hello");
+    }
+  },
+  filters: {
+    toUpper: function (string) {
+      return string.toUpperCase();
+    },
+    addName: function (string, name) {
+      return string + ', ' + name;
+    }
+  }
+})
